@@ -9,12 +9,12 @@
 </head>
 <body>
     <div class="card">
-        <form action="submit" class="form" id="formulario">
+        <form class="form" id="formulario">
             <label>Valor A: </label>
-            <input type="number" placeholder="Digite o valor de A" id="valorA">
+            <input type="number" required placeholder="Digite o valor de A" id="valorA">
             <label>Valor B: </label>
-            <input type="number" placeholder="Digite o valor de B" id="valorB">
-            <button type="submit">Enviar</button>
+            <input type="number" required placeholder="Digite o valor de B" id="valorB">
+            <button type="submit" id="enviar" onclick="calcular()">Enviar</button>
         </form>
     </div>
     <script src="main.js"></script>
