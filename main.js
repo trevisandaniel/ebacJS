@@ -1,18 +1,21 @@
-const enviar = document.getElementById('formulario');
+$(document).ready(function(){
+    
+    $('.content button').click(function(){
+        //alert('clicou em adicionar');
+    })
 
-function calcular(){
-    const a = document.getElementById('valorA').value;
-    const b = document.getElementById('valorB').value;
+    $('.content').on('submit',function(e){
+        e.preventDefault(e);
+        
+        const newTask = $('#task_id').val();
+        const addTask = $('<li></li>');
+        $(`<p>${newTask}</p>`).appendTo(addTask);
+        $(addTask).appendTo('ul')
 
-    if (a > b){
-        alert('FALHA!! O valor de B é menor do que A!');
-    } else if( a == b){
-        alert('FALHA!! os valore são iguais!');
-    } else{
-        alert('SUCESSO!! O valor de B é maior do que A!');
-    }
-};
+        $('#task_id').val('');
 
-enviar.addEventListener('submit', function(e){
-    e.preventDefault();
-})
+        $('li').click(function() {
+            $(this).css('text-decoration', 'line-through');
+          });
+    });
+});
